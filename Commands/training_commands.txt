@@ -1,0 +1,9 @@
+# generate tfrecord files
+python generate_tfrecord.py -x C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\images\train -l C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\annotations\label_map.pbtxt -o C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\annotations\train.record
+python generate_tfrecord.py -x C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\images\test -l C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\annotations\label_map.pbtxt -o C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\annotations\test.record
+
+# export model
+python exporter_main_v2.py --input_type image_tensor --pipeline_config_path C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\models\my_ssd_resnet50_v2_fpn\pipeline.config --trained_checkpoint_dir c:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\models\my_ssd_resnet50_v2_fpn --output_directory C:\Users\paperspace\Documents\TensorFlow\workspace\TF-F1\exported-models\TF-F1-Model
+
+# convert frames to mp4
+ffmpeg -framerate 24 -i frame%d.png output.mp4
