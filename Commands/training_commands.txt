@@ -1,0 +1,11 @@
+python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet50_v1_fpn/pipeline.config
+python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet50_v1_fpn/pipeline.config --checkpoint_dir=models/my_ssd_resnet50_v1_fpn
+
+python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v2_fpn --pipeline_config_path=models/my_ssd_resnet50_v2_fpn/pipeline.config
+python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v2_fpn --pipeline_config_path=models/my_ssd_resnet50_v2_fpn/pipeline.config --checkpoint_dir=models/my_ssd_resnet50_v2_fpn
+
+tensorboard --logdir=models/my_ssd_resnet50_v1_fpn
+tensorboard --logdir=models/my_ssd_resnet50_v2_fpn
+
+cd Documents\TensorFlow\workspace\TF-F1
+conda activate tensorflow
