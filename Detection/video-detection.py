@@ -90,3 +90,5 @@ for target_frame in frames:
     plt.savefig(join(OUTPUT_FRAMES_PATH, target_frame), bbox_inches='tight', pad_inches = 0)
     plt.close()
     count+=1
+    
+#os.system('ffmpeg -framerate 24 -i frame%d.png output.mp4')
